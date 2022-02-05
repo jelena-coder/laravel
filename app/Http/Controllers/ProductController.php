@@ -12,7 +12,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //vrati
     {
         return response()->json(Product::all());
     }
@@ -23,7 +23,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //kreiranje
     {
         $productDto = $request->all();
         $product = Product::create($productDto);
@@ -36,7 +36,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Product $product) //prikaz jednog
     {
         return response()->json($product, 200);
     }
